@@ -112,8 +112,14 @@ function updateTotalPrice(){
 }
 
 function updateGrandTotal(){
-    grandTotalInt = totalPriceInt - couponDiscount;
-    document.getElementById('grand-total').innerText = grandTotalInt;
+    if(seatCount>0){
+        grandTotalInt = totalPriceInt - couponDiscount;
+        document.getElementById('grand-total').innerText = grandTotalInt;
+
+    }else{
+    
+        document.getElementById('grand-total').innerText = '0';
+    }
 }
 
 document.getElementById('coupon-submit-btn').addEventListener('click' ,function (){
